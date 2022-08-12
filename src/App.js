@@ -1,23 +1,66 @@
-import logo from './logo.svg';
-import './App.css';
 
+
+
+import Intro from "./components/intro";
+import Education from "./components/education";
+import Technical from "./components/technical";
+import Experince from "./components/experince";
+import Skills from "./components/skills";
+import Course from "./components/Course";
+import Project from "./components/projects";
+import Language from "./components/Language";
+import React,{useRef} from "react";
+import ReactToPrint from "react-to-print";
 function App() {
+  const print=()=>{
+    window.print()
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container " style={{
+        backgroundColor:"white"
+    }}>
+      <Intro />
+      <div className="container" style={{
+        fontSize:"medium"
+      }}>
+        <div className="row">
+          <div className="col-sm-5">
+            <Education />
+            <Project />
+            <Experince />
+
+          </div>
+          <div className="col-sm-5" style={{marginLeft:92}}>
+            <Skills/>
+            <br/>
+            <br/>
+            <Technical />
+            <br/>
+            <Course />
+            <Language />
+
+
+          </div>
+
+
+        </div>
+
+
+        <div className="row">
+          <div className="col-sm-6">
+
+          </div>
+
+        </div>
+
+
+<button onClick={print}>Print</button>
+
+      </div>
+
+
+
     </div>
   );
 }
